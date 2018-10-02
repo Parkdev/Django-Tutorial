@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from polls import views
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # # path(r'^$', ~)는 아래처럼 표현할 수있다. 좀더 쉽게 사용하기 위해서
-    # path('', views.index),
+    path('', views.index),
     path('polls/', include('polls.urls')),
 ]
