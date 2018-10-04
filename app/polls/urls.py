@@ -13,7 +13,7 @@ from . import views
 # ]
 # from django.urls import path
 #
-from . import views
+from .views import fbv as views
 
 app_name = 'polls'
 urlpatterns = [
