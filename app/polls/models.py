@@ -18,8 +18,9 @@ class Question(models.Model):
         자신의 게시일자 >= 지금 - 하루
         :return:  24시간이 지나지않았으면 참, 지났으면 거짓
         """
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1) #참 or 거짓을 리턴
-
+        now = timezone.now()
+        # return self.pub_date >= timezone.now() - datetime.timedelta(days=1) #참 or 거짓을 리턴
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 class Choice(models.Model):
     question = models.ForeignKey(
